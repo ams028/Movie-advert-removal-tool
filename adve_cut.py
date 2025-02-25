@@ -276,9 +276,9 @@ def calc_thresholds(avg_image, std_image, avg_histbin=-1, std_histbin=-1):
     h,w = avg_image.shape
     half = w//2
     if avg_histbin == -1: 
-        avg_histbin = 13   # STD: 8..14th out of 21 bins (~66 working), 8th for mecz, 11th for tvn 
+        avg_histbin = 12   # STD: Typical setting range 8..14
     if std_histbin == -1:
-        std_histbin = 15   # AVG: 13th out of 21 bits (~145 working) # 13th stare (mecz), 11th for pegi18 (red)
+        std_histbin = 13   # AVG: Typical setting range 11..13 
         
     l_threshold_avg = calc_threshold("L AVG", avg_image[:,:half], avg_histbin)
     r_threshold_avg = calc_threshold("R AVG", avg_image[:,half:], avg_histbin)
@@ -373,7 +373,7 @@ def get_convert_mode(fastMode, hevcMode):
     if hevcMode:
         convertMode = ConvertMode.HEVC
     elif fastMode:
-        convertMode = ConvertMode.FA
+        convertMode = ConvertMode.FAST
     return convertMode
 
 def dump_merged_ok_ranges(imgs_okay, imgtimes, inputmovie, min_ok_time, min_bad_time, hystdebug, fastMode, hevcMode, delogo, remlogo, execute):
