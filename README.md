@@ -15,7 +15,7 @@ usage: adve_cut.py [-h] [-i I] [-fast] [-hevc] [-execute] [-min_ok_time MIN_OK_T
   `-i I`                  Path to input .mpeg/.mp4 movie \
   `-fast`                 Fast movie cutting mode \
   `-hevc`                 Best movie cutting mode \
-  `-execute`              Execute movie cutting \
+  `-execute`              Execute movie cutting
 #### Additional tuning/debug:
   `-min_ok_time MIN_OK_TIME` 
                         Minimal movie time detection [s] \
